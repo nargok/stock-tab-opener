@@ -1,0 +1,33 @@
+{
+  "name": "stock-tab-opener",
+  "version": "1.0.0",
+  "description": "証券コード一括オープナー - ヤフーファイナンス、株探、四季報オンラインを新しいタブで開くChrome拡張機能",
+  "main": "dist/popup.js",
+  "scripts": {
+    "build": "tsc && npm run copy-assets",
+    "build:watch": "tsc --watch",
+    "copy-assets": "cp -r src/icons dist/ && cp src/manifest.json dist/ && cp src/popup.html dist/ && cp src/popup.css dist/",
+    "clean": "rm -rf dist",
+    "dev": "npm run clean && npm run build",
+    "package": "npm run build && zip -r stock-tab-opener.zip dist/"
+  },
+  "keywords": [
+    "chrome-extension",
+    "typescript",
+    "stock",
+    "finance",
+    "yahoo-finance",
+    "kabutan",
+    "shikiho"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.0.254",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
